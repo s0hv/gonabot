@@ -14,6 +14,7 @@ def convert_class(s):
 
     g = group
     group = group.replace('1', 'I').upper()
+    group = group.replace('2', 'II')
     if len(group) > 2 or group not in ('I', 'II'):
         raise BadArgument(f'{g} must be I or II')
 
