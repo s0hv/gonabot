@@ -1,5 +1,6 @@
 from discord.ext.commands import Bot, CommandNotFound
 from aiohttp import ClientSession
+from concurrent.futures import ThreadPoolExecutor
 
 
 cogs = ['cogs.tj',
@@ -9,6 +10,7 @@ cogs = ['cogs.tj',
 class Gonabot(Bot):
     def __init__(self):
         super().__init__('.')
+        self.threadpool = ThreadPoolExecutor(max_workers=2)
         self.client = ClientSession(loop=self.loop)
 
     async def on_command_error(self, ctx, exception):
