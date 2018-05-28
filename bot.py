@@ -2,7 +2,8 @@ from discord.ext.commands import Bot, CommandNotFound
 from aiohttp import ClientSession
 
 
-cogs = ['cogs.tj']
+cogs = ['cogs.tj',
+        'cogs.botadmin']
 
 
 class Gonabot(Bot):
