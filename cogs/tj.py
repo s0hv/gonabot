@@ -65,8 +65,9 @@ class TJ(Cog):
         tj = int(tj.text.replace(',', ''))
         if tj > 0:
             if tj <= 151:
+                tj_text = str(tj) if tj != 100 else ':100:'
                 poke = self.pokemon.get(str(tj))
-                embed = Embed(title=f'Tänään jäljellä {tj} aamua',
+                embed = Embed(title=f'Tänään jäljellä {tj_text} aamua',
                               description=f'Päivän pokemon {poke["name"]}')
                 embed.set_image(url='http://assets22.pokemon.com/assets/cms2/img/pokedex/full/%s.png' % str(tj).zfill(3))
                 await ctx.send(embed=embed)
