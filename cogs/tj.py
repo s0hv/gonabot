@@ -55,7 +55,7 @@ class TJ(Cog):
             if r.status != 200:
                 return await ctx.send('TJ:n haku epäonnistui')
 
-            soup = BeautifulSoup(await r.text(), 'lxml')
+            soup = BeautifulSoup(await r.text(encoding='utf-8'), 'lxml')
 
         tj = soup.find('span', attrs={'id': 'tj'})
         div = soup.find('div', attrs={'id': "saapumisera"})
